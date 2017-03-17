@@ -1,0 +1,6 @@
+br\com\cunha\serra\controllers\HomeController.class
+br\com\cunha\serra\daos\ProdutoDAO.class
+br\com\cunha\serra\models\Produto.class
+br\com\cunha\serra\conf\AppWebConfiguration.class
+br\com\cunha\serra\conf\ServletSpringMVC.class
+br\com\cunha\serra\controllers\ProdutosController.class
