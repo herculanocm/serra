@@ -3,28 +3,38 @@ package br.com.cunha.serra.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
-import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Table(name="produto")
+@XmlRootElement
 @Entity(name="produto")
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	@NotNull
 	private String title;
 	@Lob
 	private String description;
+	@Min(30)
 	private int pages;
 	
+	/*
+	 
+	@Column(name="precos")
 	@ElementCollection
-	private List<Preco> prices = new ArrayList<Preco>();
+	private List<Preco> precos = new ArrayList<Preco>();
 
+	*/
+	
 	public Integer getId() {
 		return id;
 	}
@@ -57,18 +67,21 @@ public class Produto {
 		this.pages = pages;
 	}
 
-	public List<Preco> getPrices() {
-		return prices;
+	
+/*
+	public List<Preco> getPrecos() {
+		return precos;
 	}
 
-	public void setPrices(List<Preco> prices) {
-		this.prices = prices;
+	public void setPrecos(List<Preco> precos) {
+		this.precos = precos;
 	}
-
+*/
 	@Override
 	public String toString() {
 		return "Produto [id=" + id + ", title=" + title + ", description=" + description + ", pages=" + pages
-				+ ", prices=" + prices + "]";
+				+ "]";
+				//+ ", prices=" + precos + "]";
 	}
 	
 	

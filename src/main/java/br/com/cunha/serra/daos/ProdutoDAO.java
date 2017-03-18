@@ -19,7 +19,8 @@ public class ProdutoDAO {
 	}
 	
 	public List<Produto> lista(){
-		return manager.createQuery("select p from Produto").getResultList();
+		//return manager.createNativeQuery("select * from produto").getResultList();
+		return manager.createQuery("select p from produto p",Produto.class).getResultList();
 	}
 
 }
