@@ -1,5 +1,7 @@
 package br.com.cunha.serra.daos;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -14,6 +16,10 @@ public class ProdutoDAO {
 
 	public void save(Produto produto) {
 		manager.persist(produto);
+	}
+	
+	public List<Produto> lista(){
+		return manager.createQuery("select p from Produto").getResultList();
 	}
 
 }
