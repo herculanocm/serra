@@ -17,7 +17,7 @@
 		</c:forEach>
 		</ul>
 	</spring:hasBindErrors>
-	<form:form action="/save" method="post" commandName="product" enctype="multipart/form-data">
+	<form:form action="/produtos/save" method="post" commandName="product" enctype="multipart/form-data">
 		<div>
 			<label for="titulo">Titulo</label>
 			<form:input path="title"/>

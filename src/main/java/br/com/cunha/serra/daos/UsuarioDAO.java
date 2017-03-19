@@ -21,9 +21,11 @@ public class UsuarioDAO implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {
+		System.out.println("UsuarioDAO - UserDetails -> loadUserByUsername() - Buscando Usuario ");
 		String jpql = "select u from Usuario u where u.login = :login";
 		List<Usuario> users = em.createQuery(jpql,Usuario.class).setParameter("login", username).getResultList();
 		if(users.isEmpty()){
+			System.out.println("UsuarioDAO - UserDetails -> loadUserByUsername() - Usuario não existe ");
 			throw new UsernameNotFoundException("O usuario "+username+" não existe");
 		}
 		System.out.println("Usuario buscado DAO : "+users.get(0).toString());
