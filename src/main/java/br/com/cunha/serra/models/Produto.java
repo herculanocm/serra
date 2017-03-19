@@ -15,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-@Entity(name="produto")
+@Entity
 public class Produto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,13 +27,13 @@ public class Produto {
 	@Min(30)
 	private int pages;
 	
-	/*
+	
 	 
 	@Column(name="precos")
 	@ElementCollection
 	private List<Preco> precos = new ArrayList<Preco>();
 
-	*/
+	
 	
 	public Integer getId() {
 		return id;
@@ -68,7 +68,7 @@ public class Produto {
 	}
 
 	
-/*
+
 	public List<Preco> getPrecos() {
 		return precos;
 	}
@@ -76,12 +76,12 @@ public class Produto {
 	public void setPrecos(List<Preco> precos) {
 		this.precos = precos;
 	}
-*/
+
 	@Override
 	public String toString() {
 		return "Produto [id=" + id + ", title=" + title + ", description=" + description + ", pages=" + pages
-				+ "]";
-				//+ ", prices=" + precos + "]";
+				
+				+ ", prices=" + precos.toString() + "]";
 	}
 	
 	

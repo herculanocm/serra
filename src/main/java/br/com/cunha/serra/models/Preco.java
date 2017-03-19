@@ -26,6 +26,10 @@ public class Preco {
 	public void setBookType(BookType bookType) {
 		this.bookType = bookType;
 	}
+	@Override
+	public String toString() {
+		return "Preco [value=" + value + ", bookType=" + bookType + "]";
+	}
 	
 	
 	
